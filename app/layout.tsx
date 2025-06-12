@@ -13,9 +13,8 @@ export const metadata: Metadata = {
   icons: {
     icon: "/raven.png",          
     apple: "/raven.png",          
-    other: {
-      rel: "mask-icon",            
-      url: "/raven.png",
+    other: {          
+      url: "/raven.png"
     }
   }
 }
