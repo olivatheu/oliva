@@ -51,8 +51,8 @@ export default function AboutSection() {
         >
           {/* Left side - Image and quick info */}
           <motion.div variants={itemVariants} className="flex flex-col items-center lg:items-start">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 mb-8 rounded-lg overflow-hidden border-4 border-primary/20">
-              <Image src="/placeholder.svg?height=800&width=800" alt="Matheus Oliva" fill className="object-cover" />
+            <div className="relative w-64 h-64 md:w-100 md:h-100 mb-8 rounded-lg overflow-hidden border-4 border-primary/20">
+              <Image src="/images/oliva.webp" alt="Matheus Oliva" fill className="object-cover" />
             </div>
 
             <div className="grid grid-cols-2 gap-6 w-full max-w-md">
@@ -96,12 +96,12 @@ export default function AboutSection() {
                   <h5 className="text-white font-medium">Desenvolvedor Web - Freelancer</h5>
                   <p className="text-primary/80 text-sm">2024 - Presente</p>
                   <p className="text-gray-400 mt-1">
-                    Desenvolvimento de aplicações web, e-commerce e sistemas sob medida utilizando Vue.js, Laravel e
+                    Desenvolvimento de aplicações web, e-commerce e sistemas sob medida utilizando React.js, Vue.js, Laravel e
                     MySQL.
                   </p>
                 </div>
 
-                <div className="border-l-2 border-neutral-800 pl-4">
+                <div className="border-l-2 border-primary/30 pl-4">
                   <h5 className="text-white font-medium">Desenvolvedor Web - Aura Matrix</h5>
                   <p className="text-primary/80 text-sm">2025 - Presente</p>
                   <p className="text-gray-400 mt-1">
@@ -124,7 +124,7 @@ export default function AboutSection() {
                 <h5 className="text-white font-medium">Análise e Desenvolvimento de Sistemas</h5>
                 <p className="text-primary/80 text-sm">UniFavip Wyden</p>
                 <p className="text-gray-400 mt-1">
-                  Tecnólogo em andamento com foco em desenvolvimento de software, inteligência artificial e
+                  Tecnólogo em andamento com foco em desenvolvimento web, inteligência artificial e
                   sistemas distribuídos.
                 </p>
               </div>

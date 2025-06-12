@@ -23,7 +23,7 @@ const skills = [
     title: "Infraestrutura Digital",
     description: "Configuração e otimização de infraestrutura digital para aplicações e serviços.",
     icon: <Cpu className="h-10 w-10 text-primary" />,
-    tools: ["DNS", "VPS", "Domínios", "Servidores"],
+    tools: ["APIs", "DNS", "VPS", "Domínios"],
   },
   {
     title: "Banco de Dados",
@@ -41,7 +41,7 @@ const skills = [
     title: "Agentes IA",
     description: "Desenvolvimento de agentes inteligentes para automação e assistência.",
     icon: <Bot className="h-10 w-10 text-primary" />,
-    tools: ["Chatbots", "Agentes IA", "Atendimento IA", "Marketing IA"],
+    tools: ["Administrador IA", "Atendimento IA", "Marketing IA"],
   },
 ]
 
@@ -61,7 +61,7 @@ export default function SkillsSection() {
 
   return (
     <section id="habilidades" className="py-20 bg-black relative">
-      <div className="absolute inset-0 diagonal-lines opacity-10"></div>
+      <div className="absolute inset-0 diagonal-lines opacity-10 pointer-events-none"></div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2

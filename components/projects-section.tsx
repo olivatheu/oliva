@@ -10,39 +10,39 @@ const projects = [
   {
     id: 1,
     title: "Automação de Processos Internos",
-    description: "Sistema de automação para fluxos de trabalho internos, integrando múltiplas ferramentas e APIs.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["Automação", "N8N", "API", "Webhook"],
+    description: "Sistemas de automação para fluxos de trabalhos internos, integrando múltiplas ferramentas e APIs.",
+    image: "/images/1.webp",
+    tags: [ "Gestão", "Infraestrutura", "Monitoramento", "Provisionamento", "Organização", "Tratamento"],
     link: "#",
     github: "#",
     category: "automacao",
   },
   {
     id: 2,
-    title: "Dashboard Analytics",
-    description: "Dashboard interativo para visualização de dados e métricas de negócio em tempo real.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["Vue.js", "Chart.js", "API", "Dashboard"],
+    title: "Aplicações Web",
+    description: "Desenvolvimento de aplicações web responsivas com foco em performance, escalabilidade e experiência do usuário.",
+    image: "/images/2.webp",
+    tags: ["Dashboards", "Páginas de Apresentação", "Páginas de Venda", "Sistemas"],
     link: "#",
     github: "#",
     category: "web",
   },
   {
     id: 3,
-    title: "Assistente Virtual IA",
-    description: "Assistente virtual baseado em IA para atendimento ao cliente e automação de tarefas.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["IA", "Python", "NLP", "Chatbot"],
+    title: "Agente Virtual IA",
+    description: "Agente virtual baseado em IA para atendimento ao cliente e automação de tarefas.",
+    image: "/images/3.webp",
+    tags: ["Administração", "Contabilidade", "Controle", "Gestão", "Marketing"],
     link: "#",
     github: "#",
     category: "ia",
   },
   {
     id: 4,
-    title: "E-commerce Personalizado",
-    description: "Plataforma de e-commerce personalizada com integração de pagamentos e gestão de estoque.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["Laravel", "MySQL", "API", "E-commerce"],
+    title: "E-commerces Personalizados",
+    description: "Plataformas de e-commerce personalizadas com gestão de estoque e checkout.",
+    image: "/images/4.webp",
+    tags: ["PathTech e-comm", "M2 Embalagens"],
     link: "#",
     github: "#",
     category: "web",
@@ -50,19 +50,19 @@ const projects = [
   {
     id: 5,
     title: "Otimização de Infraestrutura",
-    description: "Projeto de otimização de infraestrutura digital, reduzindo custos e melhorando performance.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["VPS", "DNS", "Servidor", "Otimização"],
+    description: "Análises de infraestruturas digitais, reduzindo custos e melhorando performance.",
+    image: "/images/5.webp",
+    tags: ["Automações", "APIs", "DNS", "VPS"],
     link: "#",
     github: "#",
     category: "infra",
   },
   {
     id: 6,
-    title: "SaaS IA para Análise de Dados",
-    description: "Plataforma SaaS para análise de dados utilizando algoritmos de inteligência artificial.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["IA", "SaaS", "Python", "Análise de Dados"],
+    title: "Análise de Dados",
+    description: "Análise de dados utilizando algoritmos de inteligência artificial e machine learning.",
+    image: "/images/6.webp",
+    tags: ["Análise de Dados", "IA", "Machine Learning", "Python"],
     link: "#",
     github: "#",
     category: "ia",
@@ -88,7 +88,7 @@ export default function ProjectsSection() {
 
   return (
     <section id="projetos" className="py-20 bg-neutral-950 relative">
-      <div className="absolute inset-0 diagonal-lines opacity-10"></div>
+      <div className="absolute inset-0 diagonal-lines opacity-10 pointer-events-none"></div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2
@@ -97,7 +97,7 @@ export default function ProjectsSection() {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-bold text-primary font-orbitron mb-4"
           >
-            Projetos Recentes
+            Projetos Relevantes
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -105,7 +105,7 @@ export default function ProjectsSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-gray-400 max-w-2xl mx-auto"
           >
-            Conheça alguns dos projetos desenvolvidos recentemente, abrangendo diferentes áreas de atuação e
+            Conheça alguns dos projetos desenvolvidos, abrangendo diferentes áreas de atuação e
             tecnologias.
           </motion.p>
         </div>

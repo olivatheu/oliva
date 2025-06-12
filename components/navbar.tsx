@@ -66,10 +66,10 @@ export default function Navbar() {
             transition={{ duration: 0.5 }}
             className="flex items-center"
           >
-            <div className="relative h-8 w-8 mr-2">
+            {/* <div className="relative h-8 w-8 mr-2">
               <Image src="/images/bird.webp" alt="Oliva Bird" fill className="object-contain" />
-            </div>
-            <span className="text-primary font-bold text-2xl font-orbitron logo-glow">Oliva</span>
+            </div> */}
+            <span className="text-primary font-bold text-2xl ml-2 font-orbitron logo-glow">Oliva</span>
           </motion.div>
         </Link>
 

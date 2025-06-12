@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
-import { toast } from "@/hooks/use-toast"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -28,17 +27,20 @@ export default function ContactSection() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    const phoneNumber = "5571993126257"
 
-    toast({
-      title: "Mensagem enviada!",
-      description: "Obrigado pelo contato. Retornarei em breve.",
-    })
+    const message = `Nome: ${formData.name}
+Email: ${formData.email}
+Assunto: ${formData.subject}
+Mensagem: ${formData.message}`
+
+    const encodedMessage = encodeURIComponent(message)
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+
+    window.open(whatsappURL, "_blank")
 
     setFormData({
       name: "",
@@ -46,8 +48,6 @@ export default function ContactSection() {
       subject: "",
       message: "",
     })
-
-    setIsSubmitting(false)
   }
 
   const containerVariants = {
@@ -73,7 +73,7 @@ export default function ContactSection() {
 
   return (
     <section id="contatos" className="py-20 bg-neutral-950 relative">
-      <div className="absolute inset-0 diagonal-lines opacity-10"></div>
+      <div className="absolute inset-0 diagonal-lines opacity-10 pointer-events-none"></div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-orbitron mb-4">Entre em Contato</h2>
@@ -93,7 +93,7 @@ export default function ContactSection() {
           {/* Contact Form */}
           <motion.div variants={itemVariants}>
             <Card className="bg-neutral-900/80 border-neutral-800">
-              <CardContent className="p-6">
+              <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
@@ -120,7 +120,7 @@ export default function ContactSection() {
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="seu.email@exemplo.com"
+                        placeholder="email@exemplo.com"
                         required
                         className="bg-neutral-800 border-neutral-700 focus:border-primary"
                       />
@@ -208,7 +208,7 @@ export default function ContactSection() {
                       href="mailto:contato@matheusoliva.com"
                       className="text-gray-400 hover:text-primary transition-colors"
                     >
-                      contato@matheusoliva.com
+                      mathoojobs@gmail.com
                     </a>
                   </div>
                 </div>
@@ -219,7 +219,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="text-white font-medium">Localização</h4>
-                    <p className="text-gray-400">São Paulo, Brasil</p>
+                    <p className="text-gray-400">Salvador - BA, Brasil</p>
                   </div>
                 </div>
 
@@ -229,8 +229,8 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="text-white font-medium">Telefone</h4>
-                    <a href="tel:+5511999999999" className="text-gray-400 hover:text-primary transition-colors">
-                      +55 (11) 99999-9999
+                    <a href="tel:+5571993126257" className="text-gray-400 hover:text-primary transition-colors">
+                      +55 (71) 99312-6257
                     </a>
                   </div>
                 </div>
@@ -238,25 +238,11 @@ export default function ContactSection() {
             </div>
 
             <div className="bg-neutral-900/80 border border-neutral-800 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-white mb-4">Horário de Trabalho</h3>
+              <h3 className="text-xl font-semibold text-white mb-4">Disponibilidade</h3>
               <p className="text-gray-400 mb-4">
-                Estou disponível para novos projetos e colaborações. Entre em contato para discutirmos suas
+                Disponível para projetos freelancer e colaborações. Entre em contato para discutirmos suas
                 necessidades.
               </p>
-              <div className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-gray-400">Segunda - Sexta:</span>
-                  <span className="text-white">09:00 - 18:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-400">Sábado:</span>
-                  <span className="text-white">10:00 - 14:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-400">Domingo:</span>
-                  <span className="text-white">Fechado</span>
-                </div>
-              </div>
             </div>
           </motion.div>
         </motion.div>

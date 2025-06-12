@@ -84,7 +84,7 @@ export default function ProjectCard({
               </motion.div>
             </DialogTrigger>
 
-            <DialogContent className="max-w-2xl w-[95vw] max-h-[85vh] p-0 bg-neutral-900 border border-neutral-800 overflow-y-auto sm:rounded-lg rounded-t-2xl">
+            <DialogContent className="max-w-l w-[95vw] max-h-[85vh] p-0 bg-neutral-900 border border-neutral-800 overflow-y-auto sm:rounded-lg rounded-t-2xl">
               <DialogTitle className="sr-only">{title}</DialogTitle>
 
               <div className="relative w-full">
@@ -105,7 +105,6 @@ export default function ProjectCard({
                 <h3 className="text-lg font-semibold text-white mb-2">Descrição</h3>
                 <p className="text-gray-300 mb-6">{description}</p>
 
-                <h3 className="text-lg font-semibold text-white mb-2">Tecnologias</h3>
                 <div className="flex flex-wrap gap-2 mb-6">
                   {tags.map((tag, i) => (
                     <Badge
@@ -116,31 +115,6 @@ export default function ProjectCard({
                       {tag}
                     </Badge>
                   ))}
-                </div>
-
-                <h3 className="text-lg font-semibold text-white mb-2">Desafios</h3>
-                <p className="text-gray-300 mb-6">
-                  Este projeto apresentou desafios únicos que foram superados com soluções criativas e tecnologias modernas.
-                </p>
-
-                <h3 className="text-lg font-semibold text-white mb-2">Resultados</h3>
-                <p className="text-gray-300 mb-6">
-                  O resultado final atendeu e superou as expectativas, entregando uma solução eficiente e escalável.
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-3 mt-6">
-                  <Button asChild variant="default" className="flex-1">
-                    <a href={link} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Ver Demo
-                    </a>
-                  </Button>
-                  <Button asChild variant="outline" className="flex-1">
-                    <a href={github} target="_blank" rel="noopener noreferrer">
-                      <Github className="h-4 w-4 mr-2" />
-                      Ver Código
-                    </a>
-                  </Button>
                 </div>
               </div>
             </DialogContent>
@@ -168,21 +142,6 @@ export default function ProjectCard({
                 </Badge>
               </motion.div>
             ))}
-          </div>
-
-          <div className="flex gap-3 mt-auto">
-            <Button asChild variant="default" size="sm" className="flex-1">
-              <a href={link} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="h-4 w-4 mr-2" />
-                Demo
-              </a>
-            </Button>
-            <Button asChild variant="outline" size="sm" className="flex-1">
-              <a href={github} target="_blank" rel="noopener noreferrer">
-                <Github className="h-4 w-4 mr-2" />
-                Código
-              </a>
-            </Button>
           </div>
         </div>
       </div>

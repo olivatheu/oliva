@@ -14,7 +14,7 @@ export default function Footer() {
 
           <div className="flex space-x-6 mb-6 md:mb-0">
             <a
-              href="https://github.com/matheusoliva"
+              href="https://github.com/olivatheu"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-primary transition-colors"
@@ -23,7 +23,7 @@ export default function Footer() {
               <Github className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com/in/matheusoliva"
+              href="https://linkedin.com/in/olivatheu"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-primary transition-colors"
@@ -32,7 +32,7 @@ export default function Footer() {
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="https://wa.me/yourphonenumber"
+              href="https://wa.me/71993126257"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-primary transition-colors"

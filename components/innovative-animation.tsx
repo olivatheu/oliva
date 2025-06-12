@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { motion } from "framer-motion"
+import { motion, Variants } from "framer-motion"
 import { Cpu, Code, Database, Globe, Zap, Lightbulb } from "lucide-react"
 
 export default function InnovativeAnimation() {
@@ -79,13 +79,13 @@ export default function InnovativeAnimation() {
     },
   }
 
-  const pulseVariants = {
+  const pulseVariants: Variants = {
     pulse: {
       scale: [1, 1.05, 1],
       opacity: [0.7, 1, 0.7],
       transition: {
         duration: 2,
-        repeat: Number.POSITIVE_INFINITY,
+        repeat: Infinity,
         repeatType: "reverse",
       },
     },
@@ -126,9 +126,8 @@ export default function InnovativeAnimation() {
               <motion.div
                 animate={activeIcon === index ? "pulse" : {}}
                 variants={pulseVariants}
-                className={`flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full mb-2 ${
-                  activeIcon === index ? "bg-primary/20" : "bg-neutral-800"
-                }`}
+                className={`flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full mb-2 ${activeIcon === index ? "bg-primary/20" : "bg-neutral-800"
+                  }`}
                 style={{
                   borderColor: activeIcon === index ? item.color : "transparent",
                   borderWidth: "2px",
@@ -140,9 +139,8 @@ export default function InnovativeAnimation() {
               </motion.div>
               <motion.p
                 variants={textVariants}
-                className={`text-xs text-center ${
-                  activeIcon === index ? "text-primary" : "text-gray-400"
-                } transition-colors duration-300`}
+                className={`text-xs text-center ${activeIcon === index ? "text-primary" : "text-gray-400"
+                  } transition-colors duration-300`}
               >
                 {item.label}
               </motion.p>

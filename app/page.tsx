@@ -70,7 +70,7 @@ export default function Home() {
 
           <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
             <motion.a
-              href="https://github.com/matheusoliva"
+              href="https://github.com/olivatheu"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-neutral-900 hover:bg-neutral-800 p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(255,87,34,0.5)]"
@@ -81,7 +81,7 @@ export default function Home() {
               <Github className="h-5 w-5 text-primary" />
             </motion.a>
             <motion.a
-              href="https://linkedin.com/in/matheusoliva"
+              href="https://linkedin.com/in/olivatheu"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-neutral-900 hover:bg-neutral-800 p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(255,87,34,0.5)]"
@@ -92,7 +92,7 @@ export default function Home() {
               <Linkedin className="h-5 w-5 text-primary" />
             </motion.a>
             <motion.a
-              href="https://wa.me/yourphonenumber"
+              href="https://wa.me/5571993126257"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-neutral-900 hover:bg-neutral-800 p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(255,87,34,0.5)]"
