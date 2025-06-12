@@ -1,4 +1,3 @@
-// app/layout.tsx (ou .js/.tsx)
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Orbitron } from "next/font/google"
@@ -17,7 +16,6 @@ export const metadata: Metadata = {
     other: {
       rel: "mask-icon",            
       url: "/raven.png",
-      color: "#ffffff"
     }
   }
 }
