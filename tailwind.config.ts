@@ -84,6 +84,7 @@ const config: Config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "pulse-slow": "pulse-slow 3s infinite",
         floating: "floating 3s ease-in-out infinite",
+        "spin-slow": "spin 8s linear infinite",
       },
       width: {
         "5/10": "50%",
