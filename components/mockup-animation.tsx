@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react"
 import { motion, useAnimation } from "framer-motion"
-import Image from "next/image"
+
 import CodeTypingEffect from "./code-typing-effect"
 
 export default function MockupAnimation() {
@@ -60,13 +60,7 @@ function Oliva() {
       className="relative w-full max-w-2xl mx-auto"
     >
       <div className="relative">
-        <Image
-          src="/images/wallpaper.webp"
-          alt="Laptop Mockup"
-          width={800}
-          height={500}
-          className="w-full h-auto rounded-lg shadow-2xl"
-        />
+        <div className="w-full aspect-video bg-neutral-900 rounded-lg shadow-2xl border border-neutral-800" />
 
         {/* Screen overlay */}
         <motion.div

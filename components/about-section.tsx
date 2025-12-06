@@ -1,15 +1,13 @@
 "use client"
 
 import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import Image from "next/image"
-import { Briefcase, GraduationCap, Code } from "lucide-react"
+import { Briefcase, GraduationCap, Code, ArrowRight } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
+import { Button } from "@/components/ui/button"
 
 export default function AboutSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -32,115 +30,207 @@ export default function AboutSection() {
   }
 
   return (
-    <section id="sobre" className="py-20 bg-black relative">
-      <div className="absolute inset-0 diagonal-lines opacity-10"></div>
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary font-orbitron mb-4">Sobre Mim</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Conheça um pouco mais sobre minha trajetória, experiência e curiosidade por tecnologia.
-          </p>
+    <LazyMotion features={domAnimation}>
+      <section id="sobre" className="py-20 bg-background relative">
+        <div className="absolute inset-0 diagonal-lines opacity-10 pointer-events-none"></div>
+        {/* Decorative background elements */}
+        <div className="absolute top-20 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+        <div className="absolute bottom-20 right-0 w-72 h-72 bg-secondary/5 rounded-full blur-3xl -z-10"></div>
+
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <m.h2
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-4xl font-bold text-primary mb-4"
+            >
+              Sobre Mim
+            </m.h2>
+            <m.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-muted-foreground max-w-2xl mx-auto text-lg"
+            >
+              Conheça um pouco mais sobre minha <span className="text-primary font-bold bg-primary/10 px-1 rounded">trajetória</span>, <span className="text-primary font-bold bg-primary/10 px-1 rounded">experiência</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">curiosidade por tecnologia</span>.
+            </m.p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left side - Image and quick info */}
+            <m.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={containerVariants}
+              className="flex flex-col items-center lg:items-start"
+            >
+              {/* Bio for Desktop - Visible only on LG screens */}
+              <m.div variants={itemVariants} className="hidden lg:block bg-card/30 backdrop-blur-sm p-6 rounded-2xl border border-border/50 mb-8 w-full max-w-md">
+                <h3 className="text-2xl font-bold text-foreground mb-4">Matheus Oliva</h3>
+                <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
+                  <span className="text-primary font-bold bg-primary/10 px-1 rounded">Desenvolvedor Web</span> direcionado a <span className="text-primary font-bold bg-primary/10 px-1 rounded">automação de processos</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">soluções de IA</span>, com foco em criar
+                  <span className="text-primary font-bold bg-primary/10 px-1 rounded">infraestruturas digitais eficientes</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">aplicações web de alta performance</span>.
+                </p>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Minha intenção está em combinar <span className="text-primary font-bold bg-primary/10 px-1 rounded">tecnologia</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">criatividade</span> para <span className="text-primary font-bold bg-primary/10 px-1 rounded">resolver problemas complexos</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">otimizar fluxos de trabalho</span>.
+                </p>
+              </m.div>
+
+              <m.div variants={itemVariants} className="relative w-64 h-64 md:w-80 md:h-80 mb-8 group">
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-2xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+                <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+                  <Image src="/images/oliva.webp" alt="Matheus Oliva" fill className="object-cover" />
+                </div>
+              </m.div>
+
+              <m.div variants={itemVariants} className="grid grid-cols-2 gap-6 w-full max-w-md">
+                <m.div
+                  whileHover={{ y: -5, borderColor: "rgba(var(--primary), 0.5)" }}
+                  className="bg-card/50 backdrop-blur-sm p-5 rounded-xl border border-border text-center shadow-lg hover:shadow-primary/10 transition-all duration-300"
+                >
+                  <div className="bg-primary/10 p-3 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                    <Code className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-foreground font-bold text-md">Desenvolvimento</h3>
+                  <p className="text-muted-foreground text-sm">Automações & IA</p>
+                </m.div>
+                <m.div
+                  whileHover={{ y: -5, borderColor: "rgba(var(--secondary), 0.5)" }}
+                  className="bg-card/50 backdrop-blur-sm p-5 rounded-xl border border-border text-center shadow-lg hover:shadow-secondary/10 transition-all duration-300"
+                >
+                  <div className="bg-secondary/10 p-3 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                    <Briefcase className="h-6 w-6 text-secondary" />
+                  </div>
+                  <h3 className="text-foreground font-bold text-md">Projetos</h3>
+                  <p className="text-muted-foreground text-sm">45+ Entregues</p>
+                </m.div>
+              </m.div>
+            </m.div>
+
+            {/* Right side - Bio and experience */}
+            <m.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={containerVariants}
+              className="space-y-8"
+            >
+              {/* Bio for Mobile - Hidden on LG screens */}
+              <m.div variants={itemVariants} className="lg:hidden bg-card/30 backdrop-blur-sm p-6 rounded-2xl border border-border/50">
+                <h3 className="text-2xl font-bold text-foreground mb-4">Matheus Oliva</h3>
+                <p className="text-muted-foreground mb-4 text-lg leading-relaxed">
+                  <span className="text-primary font-bold bg-primary/10 px-1 rounded">Desenvolvedor Web</span> direcionado a <span className="text-primary font-bold bg-primary/10 px-1 rounded">automação de processos</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">soluções de IA</span>, com foco em criar
+                  <span className="text-primary font-bold bg-primary/10 px-1 rounded">infraestruturas digitais eficientes</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">aplicações web de alta performance</span>.
+                </p>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Minha intenção está em combinar <span className="text-primary font-bold bg-primary/10 px-1 rounded">tecnologia</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">criatividade</span> para <span className="text-primary font-bold bg-primary/10 px-1 rounded">resolver problemas complexos</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">otimizar fluxos de trabalho</span>.
+                </p>
+              </m.div>
+
+              <m.div variants={itemVariants} className="space-y-6">
+                <div>
+                  <h4 className="text-xl font-bold text-foreground mb-4 flex items-center">
+                    <Briefcase className="h-5 w-5 text-primary mr-2" />
+                    Experiência Profissional
+                  </h4>
+
+                  <div className="space-y-4 relative pl-2">
+                    <div className="absolute left-[11px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent"></div>
+
+                    <div className="relative pl-8 group">
+                      <div className="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      </div>
+                      <h5 className="text-foreground font-bold text-lg">Desenvolvedor Web - Freelancer</h5>
+                      <p className="text-primary font-medium text-sm mb-1">2024 - Presente</p>
+                      <p className="text-muted-foreground text-base leading-relaxed">
+                        Atuação focada na <span className="text-primary font-bold bg-primary/10 px-1 rounded">otimização de sistemas</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">performance web</span>. Desenvolvimento ágil de <span className="text-primary font-bold bg-primary/10 px-1 rounded">MVPs para lançamentos</span>, implementação de <span className="text-primary font-bold bg-primary/10 px-1 rounded">automações de recuperação de leads</span> e estratégias para escalar o <span className="text-primary font-bold bg-primary/10 px-1 rounded">faturamento recorrente</span>.
+                      </p>
+                    </div>
+
+                    <div className="relative pl-8 group">
+                      <div className="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      </div>
+                      <h5 className="text-foreground font-bold text-lg">Jornada na Aura Matrix</h5>
+                      <p className="text-primary font-medium text-sm mb-4">2025 - Presente</p>
+
+                      <div className="space-y-6 border-l-2 border-primary/20 pl-6 ml-1 relative">
+                        {/* Pleno II */}
+                        <div className="relative group/item">
+                          <div className="absolute -left-[31px] top-1.5 w-3 h-3 bg-primary rounded-full ring-4 ring-background group-hover/item:scale-125 transition-transform"></div>
+                          <h6 className="text-foreground font-bold text-base">Desenvolvedor Web Pleno II</h6>
+                          <span className="text-xs text-muted-foreground block mb-1">Nov 2025 - Presente</span>
+                          <p className="text-muted-foreground text-sm leading-relaxed">
+                            Direcionado a <span className="text-primary font-bold bg-primary/10 px-1 rounded">demandas estratégicas</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">qualidade operacional</span>. Gestão de infraestrutura, automações de processos e otimização de performance.
+                          </p>
+                        </div>
+
+                        {/* Pleno I */}
+                        <div className="relative group/item">
+                          <div className="absolute -left-[31px] top-1.5 w-3 h-3 bg-primary/60 rounded-full ring-4 ring-background group-hover/item:scale-125 transition-transform"></div>
+                          <h6 className="text-foreground font-bold text-base">Desenvolvedor Web Pleno I</h6>
+                          <span className="text-xs text-muted-foreground block mb-1">Jun 2025 - Out 2025</span>
+                          <p className="text-muted-foreground text-sm leading-relaxed">
+                            Expansão para desenvolvimento web, <span className="text-primary font-bold bg-primary/10 px-1 rounded">integrações multiferramentas</span> e otimizando fluxos de trabalho com automações.
+                          </p>
+                        </div>
+
+                        {/* Web Designer */}
+                        <div className="relative group/item">
+                          <div className="absolute -left-[31px] top-1.5 w-3 h-3 bg-primary/30 rounded-full ring-4 ring-background group-hover/item:scale-125 transition-transform"></div>
+                          <h6 className="text-foreground font-bold text-base">Web Designer</h6>
+                          <span className="text-xs text-muted-foreground block mb-1">Início 2025 - Mai 2025</span>
+                          <p className="text-muted-foreground text-sm leading-relaxed">
+                            Foco na criação de <span className="text-primary font-bold bg-primary/10 px-1 rounded">interfaces</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">layouts</span> intuitivos e de alta conversão.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-bold text-foreground mb-4 flex items-center">
+                    <GraduationCap className="h-5 w-5 text-primary mr-2" />
+                    Formação
+                  </h4>
+
+                  <div className="space-y-4 relative pl-2">
+                    <div className="absolute left-[11px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent"></div>
+
+                    <div className="relative pl-8 group">
+                      <div className="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      </div>
+                      <h5 className="text-foreground font-bold text-lg">Análise e Desenvolvimento de Sistemas</h5>
+                      <p className="text-primary font-medium text-sm mb-1">UniFavip Wyden</p>
+                      <p className="text-muted-foreground">
+                        Tecnólogo em andamento com foco em desenvolvimento web, inteligência artificial e sistemas distribuídos.
+                      </p>
+                    </div>
+
+                    <div className="relative pl-8 group">
+                      <div className="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      </div>
+                      <h5 className="text-foreground font-bold text-lg">Bacharelado em Ciências Contábeis</h5>
+                      <p className="text-primary font-medium text-sm mb-1">Fundação Visconde de Cairu</p>
+                      <p className="text-muted-foreground">
+                        Direcionado à Tecnologia da Informação, com ênfase em otimização de processos e automação.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </m.div>
+            </m.div>
+          </div>
         </div>
-
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-        >
-          {/* Left side - Image and quick info */}
-          <motion.div variants={itemVariants} className="flex flex-col items-center lg:items-start">
-            <div className="relative w-64 h-64 md:w-100 md:h-100 mb-8 rounded-lg overflow-hidden border-4 border-primary/20">
-              <Image src="/images/oliva.webp" alt="Matheus Oliva" fill className="object-cover" />
-            </div>
-
-            <div className="grid grid-cols-2 gap-6 w-full max-w-md">
-              <div className="bg-neutral-900/80 p-4 rounded-lg border border-neutral-800 text-center">
-                <Code className="h-6 w-6 text-primary mx-auto mb-2" />
-                <h3 className="text-white font-medium">Desenvolvimento</h3>
-                <p className="text-gray-400 text-sm">1+ ano</p>
-              </div>
-              <div className="bg-neutral-900/80 p-4 rounded-lg border border-neutral-800 text-center">
-                <Briefcase className="h-6 w-6 text-primary mx-auto mb-2" />
-                <h3 className="text-white font-medium">Projetos</h3>
-                <p className="text-gray-400 text-sm">20+ concluídos</p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right side - Bio and experience */}
-          <motion.div variants={itemVariants} className="space-y-6">
-            <div>
-              <h3 className="text-2xl font-semibold text-white mb-4">Matheus Oliva</h3>
-              <p className="text-gray-300 mb-4">
-                Desenvolvedor Web Full Stack direcionado a automação de processos e soluções de IA, com foco em criar
-                infraestruturas digitais eficientes e aplicações web de alta performance.
-              </p>
-              <p className="text-gray-300">
-                Minha intenção está em combinar tecnologia e criatividade para resolver problemas complexos e otimizar
-                fluxos de trabalho, sempre buscando as melhores práticas e tecnologias mais recentes.
-              </p>
-            </div>
-
-            <Separator className="my-6 bg-neutral-800" />
-
-            <div>
-              <h4 className="text-xl font-semibold text-white mb-4 flex items-center">
-                <Briefcase className="h-5 w-5 text-primary mr-2" />
-                Experiência Profissional
-              </h4>
-
-              <div className="space-y-4">
-                <div className="border-l-2 border-primary/30 pl-4">
-                  <h5 className="text-white font-medium">Desenvolvedor Web - Freelancer</h5>
-                  <p className="text-primary/80 text-sm">2024 - Presente</p>
-                  <p className="text-gray-400 mt-1">
-                    Desenvolvimento de aplicações web, e-commerce e sistemas sob medida utilizando React.js, Vue.js, Laravel e
-                    MySQL.
-                  </p>
-                </div>
-
-                <div className="border-l-2 border-primary/30 pl-4">
-                  <h5 className="text-white font-medium">Desenvolvedor Web - Aura Matrix</h5>
-                  <p className="text-primary/80 text-sm">2025 - Presente</p>
-                  <p className="text-gray-400 mt-1">
-                    Desenvolvimento de soluções de automação de processos internos, criação de infraestrutura digital e
-                    implementação de sistemas IA.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <Separator className="my-6 bg-neutral-800" />
-
-            <div>
-              <h4 className="text-xl font-semibold text-white mb-4 flex items-center">
-                <GraduationCap className="h-5 w-5 text-primary mr-2" />
-                Formação
-              </h4>
-
-              <div className="border-l-2 border-primary/30 pl-4">
-                <h5 className="text-white font-medium">Análise e Desenvolvimento de Sistemas</h5>
-                <p className="text-primary/80 text-sm">UniFavip Wyden</p>
-                <p className="text-gray-400 mt-1">
-                  Tecnólogo em andamento com foco em desenvolvimento web, inteligência artificial e
-                  sistemas distribuídos.
-                </p>
-              </div>
-              <br />
-              <div className="border-l-2 border-primary/30 pl-4">
-                <h5 className="text-white font-medium">Bacharelado em Ciências Contábeis</h5>
-                <p className="text-primary/80 text-sm">Fundação Visconde de Cairu</p>
-                <p className="text-gray-400 mt-1">
-                  Bacharelado em andamento, direcionado à Tecnologia da Informação,
-                  com ênfase em otimização de processos, automação e geração de resultados.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
+      </section>
+    </LazyMotion>
   )
 }

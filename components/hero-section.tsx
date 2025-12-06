@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { motion, useAnimation } from "framer-motion"
+import { motion, useAnimation, Variants } from "framer-motion"
 import Image from "next/image"
 import { ChevronDown } from "lucide-react"
 import InnovativeAnimation from "./innovative-animation"
@@ -20,7 +20,7 @@ export default function HeroSection({ scrollToContent }: HeroSectionProps) {
   }, [controls])
 
   // Logo animation variants
-  const logoVariants = {
+  const logoVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -33,7 +33,7 @@ export default function HeroSection({ scrollToContent }: HeroSectionProps) {
   }
 
   // Quote animation variants
-  const quoteVariants = {
+  const quoteVariants: Variants = {
     hidden: { opacity: 0, x: -50 },
     visible: {
       opacity: 1,
@@ -49,15 +49,10 @@ export default function HeroSection({ scrollToContent }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background with diagonal lines */}
-      <div className="absolute inset-0 diagonal-lines"></div>
+      <div className="absolute inset-0 diagonal-lines opacity-10"></div>
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/80"></div>
-
-      {/* Background image */}
-      <div className="absolute inset-0 z-[-1]">
-        <Image src="/images/wallpaper.webp" alt="Background" fill priority className="object-cover" />
-      </div>
+      {/* Overlay - removed dark overlay for light theme, added subtle gradient if needed */}
+      {/* <div className="absolute inset-0 bg-black/80"></div> */}
 
       <div className="container mx-auto px-6 sm:px-8 z-10">
         {/* Wrapper div to center and constrain width */}
@@ -75,7 +70,7 @@ export default function HeroSection({ scrollToContent }: HeroSectionProps) {
                   "No que diz respeito ao empenho, ao compromisso, ao esforço, à dedicação, não existe meio-termo. Ou
                   você faz uma coisa bem-feita ou não faz."
                 </p>
-                <footer className="text-sm text-gray-400 mt-2">- Ayrton Senna</footer>
+                <footer className="text-sm text-muted-foreground mt-2">- Ayrton Senna</footer>
               </blockquote>
 
               <div className="mt-8 w-full">
@@ -94,9 +89,9 @@ export default function HeroSection({ scrollToContent }: HeroSectionProps) {
                 animate={{
                   y: [0, -10, 0],
                   filter: [
-                    "drop-shadow(0 0 5px rgba(255, 87, 34, 0.3))",
-                    "drop-shadow(0 0 15px rgba(255, 87, 34, 0.7))",
-                    "drop-shadow(0 0 5px rgba(255, 87, 34, 0.3))",
+                    "drop-shadow(0 0 5px rgba(79, 209, 197, 0.3))",
+                    "drop-shadow(0 0 15px rgba(79, 209, 197, 0.7))",
+                    "drop-shadow(0 0 5px rgba(79, 209, 197, 0.3))",
                   ],
                 }}
                 transition={{
@@ -106,9 +101,9 @@ export default function HeroSection({ scrollToContent }: HeroSectionProps) {
                   repeat: Number.POSITIVE_INFINITY,
                   repeatType: "reverse",
                 }}
-                className="relative w-64 h-64 md:w-80 md:h-80"
+                className="relative w-64 h-64 md:w-80 md:h-80 mb-20 md:mb-0"
               >
-                <Image src="/images/logo-oliva.png" alt="Oliva Logo" fill className="object-contain" />
+                <Image src="/images/logo-oliva-m.webp" alt="Oliva Logo" fill className="object-contain" />
               </motion.div>
             </motion.div>
           </div>
@@ -124,7 +119,7 @@ export default function HeroSection({ scrollToContent }: HeroSectionProps) {
         onClick={scrollToContent}
       >
         <div className="flex flex-col items-center">
-          <span className="text-sm text-gray-400">Scroll Down</span>
+          <span className="text-sm text-muted-foreground">Scroll Down</span>
           <ChevronDown className="h-6 w-6 text-primary animate-bounce" />
         </div>
       </motion.div>

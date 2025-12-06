@@ -9,7 +9,7 @@ import { useMediaQuery } from "@/hooks/use-media-query"
 import Image from "next/image"
 
 const navItems = [
-  { name: "Habilidades", href: "#habilidades" },
+
   { name: "Projetos", href: "#projetos" },
   { name: "Sobre", href: "#sobre" },
   { name: "Contatos", href: "#contatos" },
@@ -54,9 +54,8 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black/80 backdrop-blur-md py-2" : "bg-transparent py-4"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/80 backdrop-blur-md py-2 shadow-sm" : "bg-transparent py-4"
+        }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="flex items-center">
@@ -66,10 +65,7 @@ export default function Navbar() {
             transition={{ duration: 0.5 }}
             className="flex items-center"
           >
-            {/* <div className="relative h-8 w-8 mr-2">
-              <Image src="/images/bird.webp" alt="Oliva Bird" fill className="object-contain" />
-            </div> */}
-            <span className="text-primary font-bold text-2xl ml-2 font-orbitron logo-glow">Oliva</span>
+            <span className="text-primary font-bold text-2xl logo-glow">Oliva</span>
           </motion.div>
         </Link>
 
@@ -84,9 +80,8 @@ export default function Navbar() {
             >
               <Link
                 href={item.href}
-                className={`nav-link text-sm font-medium transition-colors hover:text-primary ${
-                  activeSection === item.href.substring(1) ? "text-primary active" : "text-gray-300"
-                }`}
+                className={`nav-link text-sm font-medium transition-colors hover:text-primary ${activeSection === item.href.substring(1) ? "text-primary active" : "text-foreground/80"
+                  }`}
               >
                 {item.name}
               </Link>
@@ -96,7 +91,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <Button variant="ghost" size="icon" onClick={toggleMobileMenu} className="text-white hover:bg-neutral-800">
+          <Button variant="ghost" size="icon" onClick={toggleMobileMenu} className="text-foreground hover:bg-secondary">
             {mobileMenuOpen ? <X className="h-6 w-6 text-primary" /> : <Menu className="h-6 w-6 text-primary" />}
           </Button>
         </div>
@@ -109,7 +104,7 @@ export default function Navbar() {
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden bg-black/95 backdrop-blur-md"
+          className="md:hidden bg-background/95 backdrop-blur-md border-b border-border"
         >
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-4">
@@ -118,9 +113,8 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   onClick={closeMobileMenu}
-                  className={`py-2 text-center text-base font-medium transition-colors hover:text-primary ${
-                    activeSection === item.href.substring(1) ? "text-primary" : "text-gray-300"
-                  }`}
+                  className={`py-2 text-center text-base font-medium transition-colors hover:text-primary ${activeSection === item.href.substring(1) ? "text-primary" : "text-foreground/80"
+                    }`}
                 >
                   {item.name}
                 </Link>

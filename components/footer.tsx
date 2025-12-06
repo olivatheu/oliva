@@ -4,12 +4,12 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-black py-10 border-t border-neutral-900">
+    <footer className="bg-background py-10 border-t border-border">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <h2 className="text-primary font-bold text-2xl font-orbitron logo-glow">Oliva</h2>
-            <p className="text-gray-400 mt-2 text-sm">Construímos para você alçar voos mais altos</p>
+            <h2 className="text-primary font-bold text-2xl logo-glow">Oliva</h2>
+            <p className="text-muted-foreground mt-2 text-sm">Construímos para você alçar voos mais altos</p>
           </div>
 
           <div className="flex space-x-6 mb-6 md:mb-0">
@@ -17,7 +17,7 @@ export default function Footer() {
               href="https://github.com/olivatheu"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="GitHub"
             >
               <Github className="h-5 w-5" />
@@ -26,7 +26,7 @@ export default function Footer() {
               href="https://linkedin.com/in/olivatheu"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
@@ -35,7 +35,7 @@ export default function Footer() {
               href="https://wa.me/71993126257"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="WhatsApp"
             >
               <MessageSquare className="h-5 w-5" />
@@ -43,8 +43,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-neutral-900 mt-8 pt-8 flex flex-col md:flex-row justify-center items-center">
-          <p className="text-gray-500 text-sm mb-4 md:mb-0">
+        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-center items-center">
+          <p className="text-muted-foreground text-sm mb-4 md:mb-0">
             &copy; {currentYear} Matheus Oliva. Todos os direitos reservados.
           </p>
         </div>

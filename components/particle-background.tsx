@@ -8,6 +8,8 @@ interface Particle {
   size: number
   speedX: number
   speedY: number
+  baseSpeedX: number
+  baseSpeedY: number
   color: string
   opacity: number
 }
@@ -15,7 +17,7 @@ interface Particle {
 export default function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const particles = useRef<Particle[]>([])
-  const animationFrameId = useRef<number>()
+  const animationFrameId = useRef<number | undefined>(undefined)
   const mousePosition = useRef({ x: 0, y: 0 })
 
   useEffect(() => {
@@ -46,13 +48,18 @@ export default function ParticleBackground() {
       const particleCount = Math.min(Math.floor(window.innerWidth / 10), 100)
 
       for (let i = 0; i < particleCount; i++) {
+        const speedX = (Math.random() - 0.5) * 0.5
+        const speedY = (Math.random() - 0.5) * 0.5
+
         particles.current.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           size: Math.random() * 2 + 0.5,
-          speedX: (Math.random() - 0.5) * 0.5,
-          speedY: (Math.random() - 0.5) * 0.5,
-          color: "#FF5722",
+          speedX: speedX,
+          speedY: speedY,
+          baseSpeedX: speedX,
+          baseSpeedY: speedY,
+          color: "#1B4332",
           opacity: Math.random() * 0.5 + 0.1,
         })
       }
@@ -86,10 +93,14 @@ export default function ParticleBackground() {
           particle.speedY -= Math.sin(angle) * 0.02
         }
 
+        // Restore speed to base speed (damping)
+        particle.speedX += (particle.baseSpeedX - particle.speedX) * 0.05
+        particle.speedY += (particle.baseSpeedY - particle.speedY) * 0.05
+
         // Draw particle
         ctx.beginPath()
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(255, 87, 34, ${particle.opacity})`
+        ctx.fillStyle = `rgba(27, 67, 50, ${particle.opacity})` // Primary color
         ctx.fill()
 
         // Connect nearby particles
@@ -103,7 +114,7 @@ export default function ParticleBackground() {
             ctx.beginPath()
             ctx.moveTo(particle.x, particle.y)
             ctx.lineTo(otherParticle.x, otherParticle.y)
-            ctx.strokeStyle = `rgba(255, 87, 34, ${0.1 * (1 - distance / 100)})`
+            ctx.strokeStyle = `rgba(27, 67, 50, ${0.15 * (1 - distance / 100)})` // Slightly increased opacity for visibility on light bg
             ctx.lineWidth = 0.5
             ctx.stroke()
           }

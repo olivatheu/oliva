@@ -12,7 +12,7 @@ const projects = [
     title: "Automação de Processos Internos",
     description: "Sistemas de automação para fluxos de trabalhos internos, integrando múltiplas ferramentas e APIs.",
     image: "/images/1.webp",
-    tags: [ "Gestão", "Infraestrutura", "Monitoramento", "Provisionamento", "Organização", "Tratamento"],
+    tags: ["Gestão", "Infraestrutura", "Monitoramento", "Provisionamento", "Organização", "Tratamento"],
     link: "#",
     github: "#",
     category: "automacao",
@@ -22,7 +22,7 @@ const projects = [
     title: "Aplicações Web",
     description: "Desenvolvimento de aplicações web responsivas com foco em performance, escalabilidade e experiência do usuário.",
     image: "/images/2.webp",
-    tags: ["Dashboards", "Páginas de Apresentação", "Páginas de Venda", "Sistemas"],
+    tags: ["Dados", "Páginas de Apresentação", "Páginas de Venda", "Sistemas"],
     link: "#",
     github: "#",
     category: "web",
@@ -87,7 +87,7 @@ export default function ProjectsSection() {
   const filteredProjects = activeTab === "all" ? projects : projects.filter((project) => project.category === activeTab)
 
   return (
-    <section id="projetos" className="py-20 bg-neutral-950 relative">
+    <section id="projetos" className="py-20 bg-background relative">
       <div className="absolute inset-0 diagonal-lines opacity-10 pointer-events-none"></div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
@@ -95,7 +95,7 @@ export default function ProjectsSection() {
             initial={{ opacity: 0, y: -20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold text-primary font-orbitron mb-4"
+            className="text-3xl md:text-4xl font-bold text-primary mb-4"
           >
             Projetos Relevantes
           </motion.h2>
@@ -103,7 +103,7 @@ export default function ProjectsSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-gray-400 max-w-2xl mx-auto"
+            className="text-muted-foreground max-w-2xl mx-auto"
           >
             Conheça alguns dos projetos desenvolvidos, abrangendo diferentes áreas de atuação e
             tecnologias.

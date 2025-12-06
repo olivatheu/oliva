@@ -1,17 +1,18 @@
 "use client"
 
 import { useEffect, useState, useRef } from "react"
-import { useScroll, useTransform, motion } from "framer-motion"
+import { useScroll, useTransform, motion, AnimatePresence } from "framer-motion"
 import { Github, Linkedin, MessageSquare } from "lucide-react"
 import Navbar from "@/components/navbar"
 import HeroSection from "@/components/hero-section"
-import SkillsSection from "@/components/skills-section"
-import ProjectsSection from "@/components/projects-section"
+
+import ServicesSection from "@/components/services-section"
 import AboutSection from "@/components/about-section"
 import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
 import ParticleBackground from "@/components/particle-background"
-import EntranceAnimation from "@/components/entrance-animation"
+import AntigravityPreloader from "@/components/antigravity-preloader"
+import EssenceSection from "@/components/essence-section"
 
 export default function Home() {
   const [showEntranceAnimation, setShowEntranceAnimation] = useState(true)
@@ -46,13 +47,18 @@ export default function Home() {
 
   return (
     <>
-      {showEntranceAnimation ? (
-        <EntranceAnimation onAnimationComplete={handleAnimationComplete} />
-      ) : (
-        <div
-          className={`min-h-screen bg-black text-white overflow-hidden transition-opacity duration-500 ${
-            isLoaded ? "opacity-100" : "opacity-0"
-          }`}
+      <AnimatePresence>
+        {showEntranceAnimation && (
+          <AntigravityPreloader key="preloader" onComplete={handleAnimationComplete} />
+        )}
+      </AnimatePresence>
+
+      {!showEntranceAnimation && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          className="min-h-screen overflow-hidden"
         >
           <ParticleBackground />
           <Navbar />
@@ -60,8 +66,8 @@ export default function Home() {
           <HeroSection scrollToContent={scrollToContent} />
 
           <main ref={mainRef} className="relative z-10">
-            <SkillsSection />
-            <ProjectsSection />
+            <EssenceSection />
+            <ServicesSection />
             <AboutSection />
             <ContactSection />
           </main>
@@ -73,7 +79,7 @@ export default function Home() {
               href="https://github.com/olivatheu"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-neutral-900 hover:bg-neutral-800 p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(255,87,34,0.5)]"
+              className="bg-card hover:bg-secondary/20 border border-border p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(230,126,34,0.5)]"
               aria-label="GitHub"
               whileHover={{ rotate: 10 }}
               whileTap={{ scale: 0.9 }}
@@ -84,7 +90,7 @@ export default function Home() {
               href="https://linkedin.com/in/olivatheu"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-neutral-900 hover:bg-neutral-800 p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(255,87,34,0.5)]"
+              className="bg-card hover:bg-secondary/20 border border-border p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(230,126,34,0.5)]"
               aria-label="LinkedIn"
               whileHover={{ rotate: 10 }}
               whileTap={{ scale: 0.9 }}
@@ -95,7 +101,7 @@ export default function Home() {
               href="https://wa.me/5571993126257"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-neutral-900 hover:bg-neutral-800 p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(255,87,34,0.5)]"
+              className="bg-card hover:bg-secondary/20 border border-border p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(230,126,34,0.5)]"
               aria-label="WhatsApp"
               whileHover={{ rotate: 10 }}
               whileTap={{ scale: 0.9 }}
@@ -103,8 +109,9 @@ export default function Home() {
               <MessageSquare className="h-5 w-5 text-primary" />
             </motion.a>
           </div>
-        </div>
-      )}
+        </motion.div >
+      )
+      }
     </>
   )
 }
