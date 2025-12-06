@@ -10,6 +10,7 @@ const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron" })
 export const metadata: Metadata = {
   title: "Oliva | Aplicações Web, Automações & IA",
   description: "Transforme seu negócio com soluções avançadas em Desenvolvimento Web, Automação de Processos e Inteligência Artificial. Inovação e eficiência para resultados reais.",
+  metadataBase: new URL("https://olivamatheus.com.br"),
   keywords: ["Desenvolvimento Web", "Automação", "Inteligência Artificial", "IA", "Software", "Tecnologia", "Sites", "Aplicativos", "Oliva"],
   authors: [{ name: "Matheus Oliva" }],
   creator: "Matheus Oliva",
