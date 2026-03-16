@@ -83,7 +83,7 @@ export default function AboutSection() {
               <m.div variants={itemVariants} className="relative w-64 h-64 md:w-80 md:h-80 mb-8 group">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-2xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
                 <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-                  <Image src="/images/oliva.webp" alt="Matheus Oliva" fill className="object-cover" />
+                  <Image src="/images/img-maca.webp" alt="Matheus Oliva" fill className="object-cover" />
                 </div>
               </m.div>
 
@@ -141,30 +141,32 @@ export default function AboutSection() {
                   <div className="space-y-4 relative pl-2">
                     <div className="absolute left-[11px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent"></div>
 
+                    {/* Vita Health Supplements */}
                     <div className="relative pl-8 group">
                       <div className="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <div className="w-2 h-2 bg-primary rounded-full"></div>
+                        <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
                       </div>
-                      <h5 className="text-foreground font-bold text-lg">Desenvolvedor Web - Freelancer</h5>
-                      <p className="text-primary font-medium text-sm mb-1">2024 - Presente</p>
+                      <h5 className="text-foreground font-bold text-lg">Vita Health Supplements</h5>
+                      <p className="text-primary font-medium text-sm mb-1">Fev 2026 - Presente</p>
                       <p className="text-muted-foreground text-base leading-relaxed">
-                        Atuação focada na <span className="text-primary font-bold bg-primary/10 px-1 rounded">otimização de sistemas</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">performance web</span>. Desenvolvimento ágil de <span className="text-primary font-bold bg-primary/10 px-1 rounded">MVPs para lançamentos</span>, implementação de <span className="text-primary font-bold bg-primary/10 px-1 rounded">automações de recuperação de leads</span> e estratégias para escalar o <span className="text-primary font-bold bg-primary/10 px-1 rounded">faturamento recorrente</span>.
+                        Atuação no desenvolvimento de <span className="text-primary font-bold bg-primary/10 px-1 rounded">aplicações web</span>, <span className="text-primary font-bold bg-primary/10 px-1 rounded">análise e auditoria de dados</span>. Responsável pela estruturação de <span className="text-primary font-bold bg-primary/10 px-1 rounded">páginas e funis de vendas</span>, integração de <span className="text-primary font-bold bg-primary/10 px-1 rounded">plataformas e ferramentas</span>, implementação de <span className="text-primary font-bold bg-primary/10 px-1 rounded">automações</span> e configuração de <span className="text-primary font-bold bg-primary/10 px-1 rounded">tracking e rastreamento de eventos</span> para otimização de campanhas e performance de conversão.
                       </p>
                     </div>
 
+                    {/* Aura Matrix */}
                     <div className="relative pl-8 group">
-                      <div className="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      <div className="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-primary/60 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div className="w-2 h-2 bg-primary/60 rounded-full"></div>
                       </div>
                       <h5 className="text-foreground font-bold text-lg">Jornada na Aura Matrix</h5>
-                      <p className="text-primary font-medium text-sm mb-4">2025 - Presente</p>
+                      <p className="text-primary/80 font-medium text-sm mb-4">Jan 2025 - Fev 2026</p>
 
                       <div className="space-y-6 border-l-2 border-primary/20 pl-6 ml-1 relative">
                         {/* Pleno II */}
                         <div className="relative group/item">
-                          <div className="absolute -left-[31px] top-1.5 w-3 h-3 bg-primary rounded-full ring-4 ring-background group-hover/item:scale-125 transition-transform"></div>
+                          <div className="absolute -left-[31px] top-1.5 w-3 h-3 bg-primary/70 rounded-full ring-4 ring-background group-hover/item:scale-125 transition-transform"></div>
                           <h6 className="text-foreground font-bold text-base">Desenvolvedor Web Pleno II</h6>
-                          <span className="text-xs text-muted-foreground block mb-1">Nov 2025 - Presente</span>
+                          <span className="text-xs text-muted-foreground block mb-1">Nov 2025 - Fev 2026</span>
                           <p className="text-muted-foreground text-sm leading-relaxed">
                             Direcionado a <span className="text-primary font-bold bg-primary/10 px-1 rounded">demandas estratégicas</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">qualidade operacional</span>. Gestão de infraestrutura, automações de processos e otimização de performance.
                           </p>
@@ -172,7 +174,7 @@ export default function AboutSection() {
 
                         {/* Pleno I */}
                         <div className="relative group/item">
-                          <div className="absolute -left-[31px] top-1.5 w-3 h-3 bg-primary/60 rounded-full ring-4 ring-background group-hover/item:scale-125 transition-transform"></div>
+                          <div className="absolute -left-[31px] top-1.5 w-3 h-3 bg-primary/50 rounded-full ring-4 ring-background group-hover/item:scale-125 transition-transform"></div>
                           <h6 className="text-foreground font-bold text-base">Desenvolvedor Web Pleno I</h6>
                           <span className="text-xs text-muted-foreground block mb-1">Jun 2025 - Out 2025</span>
                           <p className="text-muted-foreground text-sm leading-relaxed">
@@ -184,9 +186,37 @@ export default function AboutSection() {
                         <div className="relative group/item">
                           <div className="absolute -left-[31px] top-1.5 w-3 h-3 bg-primary/30 rounded-full ring-4 ring-background group-hover/item:scale-125 transition-transform"></div>
                           <h6 className="text-foreground font-bold text-base">Web Designer</h6>
-                          <span className="text-xs text-muted-foreground block mb-1">Início 2025 - Mai 2025</span>
+                          <span className="text-xs text-muted-foreground block mb-1">Jan 2025 - Mai 2025</span>
                           <p className="text-muted-foreground text-sm leading-relaxed">
                             Foco na criação de <span className="text-primary font-bold bg-primary/10 px-1 rounded">interfaces</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">layouts</span> intuitivos e de alta conversão.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Freelancer */}
+                    <div className="relative pl-8 group">
+                      <div className="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-primary/60 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div className="w-2 h-2 bg-primary/60 rounded-full"></div>
+                      </div>
+                      <h5 className="text-foreground font-bold text-lg">Desenvolvedor Web - Freelancer</h5>
+                      <p className="text-primary/80 font-medium text-sm mb-1">2024 - Presente</p>
+                      <p className="text-muted-foreground text-base leading-relaxed mb-3">
+                        Atuação focada em <span className="text-primary font-bold bg-primary/10 px-1 rounded">desenvolvimento de aplicações web</span>, <span className="text-primary font-bold bg-primary/10 px-1 rounded">otimização de páginas</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">infraestruturas digitais</span>. Projetos envolvendo <span className="text-primary font-bold bg-primary/10 px-1 rounded">marketing de resposta direta</span>, MVPs para lançamentos e automações de recuperação de leads.
+                      </p>
+                      <div className="space-y-3 border-l-2 border-primary/20 pl-4 ml-1">
+                        <div className="relative group/item">
+                          <div className="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-primary/50 rounded-full ring-3 ring-background"></div>
+                          <h6 className="text-foreground font-semibold text-sm">Alpha Roads</h6>
+                          <p className="text-muted-foreground text-xs leading-relaxed">
+                            Nicho de <span className="text-primary font-bold bg-primary/10 px-1 rounded">renda extra</span>. Desenvolvimento e otimização de páginas, funis de vendas, operações de <span className="text-primary font-bold bg-primary/10 px-1 rounded">marketing digital</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">direct response</span>.
+                          </p>
+                        </div>
+                        <div className="relative group/item">
+                          <div className="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-primary/50 rounded-full ring-3 ring-background"></div>
+                          <h6 className="text-foreground font-semibold text-sm">Instituto St. Joseph</h6>
+                          <p className="text-muted-foreground text-xs leading-relaxed">
+                            Nicho de <span className="text-primary font-bold bg-primary/10 px-1 rounded">saúde, emagrecimento e estética</span>. Estruturação de páginas, infraestrutura digital e campanhas de <span className="text-primary font-bold bg-primary/10 px-1 rounded">direct response</span>.
                           </p>
                         </div>
                       </div>
