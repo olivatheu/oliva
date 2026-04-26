@@ -106,7 +106,17 @@ export default function AboutSection() {
                     <Briefcase className="h-6 w-6 text-secondary" />
                   </div>
                   <h3 className="text-foreground font-bold text-md">Projetos</h3>
-                  <p className="text-muted-foreground text-sm">45+ Entregues</p>
+                  <p className="text-muted-foreground text-sm">70+ Entregues</p>
+                </m.div>
+                <m.div
+                  whileHover={{ y: -5, borderColor: "rgba(var(--primary), 0.5)" }}
+                  className="col-span-2 bg-card/50 backdrop-blur-sm p-5 rounded-xl border border-border text-center shadow-lg hover:shadow-primary/10 transition-all duration-300"
+                >
+                  <div className="bg-primary/10 p-3 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                    <ArrowRight className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-foreground font-bold text-md">Infraestruturas Digitais que Faturam</h3>
+                  <p className="text-green-500 font-bold text-sm">8D Mensal</p>
                 </m.div>
               </m.div>
             </m.div>
@@ -147,10 +157,32 @@ export default function AboutSection() {
                         <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
                       </div>
                       <h5 className="text-foreground font-bold text-lg">Vita Health Supplements</h5>
-                      <p className="text-primary font-medium text-sm mb-1">Fev 2026 - Presente</p>
-                      <p className="text-muted-foreground text-base leading-relaxed">
-                        Atuação no desenvolvimento de <span className="text-primary font-bold bg-primary/10 px-1 rounded">aplicações web</span>, <span className="text-primary font-bold bg-primary/10 px-1 rounded">análise e auditoria de dados</span>. Responsável pela estruturação de <span className="text-primary font-bold bg-primary/10 px-1 rounded">páginas e funis de vendas</span>, integração de <span className="text-primary font-bold bg-primary/10 px-1 rounded">plataformas e ferramentas</span>, implementação de <span className="text-primary font-bold bg-primary/10 px-1 rounded">automações</span> e configuração de <span className="text-primary font-bold bg-primary/10 px-1 rounded">tracking e rastreamento de eventos</span> para otimização de campanhas e performance de conversão.
+                      <p className="text-primary/80 font-medium text-sm mb-4">2025 - Presente</p>
+                      <p className="text-muted-foreground text-base leading-relaxed mb-4">
+                        Atuação no desenvolvimento de <span className="text-primary font-bold bg-primary/10 px-1 rounded">aplicações web</span>, <span className="text-primary font-bold bg-primary/10 px-1 rounded">automações</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">soluções para processos internos</span>. Responsável pela estruturação de <span className="text-primary font-bold bg-primary/10 px-1 rounded">páginas e funis de vendas</span>, integração de <span className="text-primary font-bold bg-primary/10 px-1 rounded">plataformas e ferramentas</span> e configuração de <span className="text-primary font-bold bg-primary/10 px-1 rounded">tracking e rastreamento de eventos</span> para otimização de campanhas e performance de conversão.
                       </p>
+
+                      <div className="space-y-6 border-l-2 border-primary/20 pl-6 ml-1 relative">
+                        {/* Full Stack - Fev 2026 */}
+                        <div className="relative group/item">
+                          <div className="absolute -left-[31px] top-1.5 w-3 h-3 bg-primary rounded-full ring-4 ring-background group-hover/item:scale-125 transition-transform animate-pulse"></div>
+                          <h6 className="text-foreground font-bold text-base">Desenvolvedor Full Stack</h6>
+                          <span className="text-xs text-muted-foreground block mb-1">Fev 2026 - Presente</span>
+                          <p className="text-muted-foreground text-sm leading-relaxed">
+                            Contratado de forma fixa para liderar o desenvolvimento full stack, implementação de <span className="text-primary font-bold bg-primary/10 px-1 rounded">automações</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">soluções para processos internos</span> da operação.
+                          </p>
+                        </div>
+
+                        {/* Freelancer Vita Health */}
+                        <div className="relative group/item">
+                          <div className="absolute -left-[31px] top-1.5 w-3 h-3 bg-primary/50 rounded-full ring-4 ring-background group-hover/item:scale-125 transition-transform"></div>
+                          <h6 className="text-foreground font-bold text-base">Freelancer</h6>
+                          <span className="text-xs text-muted-foreground block mb-1">2025 - Jan 2026</span>
+                          <p className="text-muted-foreground text-sm leading-relaxed">
+                            Responsável pela <span className="text-primary font-bold bg-primary/10 px-1 rounded">otimização</span> e desenvolvimento de <span className="text-primary font-bold bg-primary/10 px-1 rounded">páginas de funis</span>, além do desenvolvimento do <span className="text-primary font-bold bg-primary/10 px-1 rounded">dashboard para fechamento</span> da operação.
+                          </p>
+                        </div>
+                      </div>
                     </div>
 
                     {/* Aura Matrix */}
@@ -202,7 +234,7 @@ export default function AboutSection() {
                       <h5 className="text-foreground font-bold text-lg">Desenvolvedor Web - Freelancer</h5>
                       <p className="text-primary/80 font-medium text-sm mb-1">2024 - Presente</p>
                       <p className="text-muted-foreground text-base leading-relaxed mb-3">
-                        Atuação focada em <span className="text-primary font-bold bg-primary/10 px-1 rounded">desenvolvimento de aplicações web</span>, <span className="text-primary font-bold bg-primary/10 px-1 rounded">otimização de páginas</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">infraestruturas digitais</span>. Projetos envolvendo <span className="text-primary font-bold bg-primary/10 px-1 rounded">marketing de resposta direta</span>, MVPs para lançamentos e automações de recuperação de leads.
+                        Atuação focada em <span className="text-primary font-bold bg-primary/10 px-1 rounded">desenvolvimento de automações e aplicações web</span>, <span className="text-primary font-bold bg-primary/10 px-1 rounded">otimização de páginas</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">infraestruturas digitais</span>. Projetos envolvendo <span className="text-primary font-bold bg-primary/10 px-1 rounded">marketing de resposta direta</span>, MVPs para lançamentos e automações de recuperação de leads.
                       </p>
                       <div className="space-y-3 border-l-2 border-primary/20 pl-4 ml-1">
                         <div className="relative group/item">
@@ -216,7 +248,14 @@ export default function AboutSection() {
                           <div className="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-primary/50 rounded-full ring-3 ring-background"></div>
                           <h6 className="text-foreground font-semibold text-sm">Instituto St. Joseph</h6>
                           <p className="text-muted-foreground text-xs leading-relaxed">
-                            Nicho de <span className="text-primary font-bold bg-primary/10 px-1 rounded">saúde, emagrecimento e estética</span>. Estruturação de páginas, infraestrutura digital e campanhas de <span className="text-primary font-bold bg-primary/10 px-1 rounded">direct response</span>.
+                            Nicho de <span className="text-primary font-bold bg-primary/10 px-1 rounded">saúde, emagrecimento e estética</span>. Desenvolvimento de <span className="text-primary font-bold bg-primary/10 px-1 rounded">funis de vendas</span>, <span className="text-primary font-bold bg-primary/10 px-1 rounded">quiz interativos</span>, <span className="text-primary font-bold bg-primary/10 px-1 rounded">apps demonstrativos</span> e soluções digitais customizadas.
+                          </p>
+                        </div>
+                        <div className="relative group/item">
+                          <div className="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-primary/50 rounded-full ring-3 ring-background"></div>
+                          <h6 className="text-foreground font-semibold text-sm">MMO Global</h6>
+                          <p className="text-muted-foreground text-xs leading-relaxed">
+                            Nicho de <span className="text-primary font-bold bg-primary/10 px-1 rounded">renda extra</span>. Desenvolvimento e otimização de páginas, funis de vendas, <span className="text-primary font-bold bg-primary/10 px-1 rounded">integrações com gateway de pagamento</span> e <span className="text-primary font-bold bg-primary/10 px-1 rounded">dashboard para visualização de resultados</span>.
                           </p>
                         </div>
                       </div>
